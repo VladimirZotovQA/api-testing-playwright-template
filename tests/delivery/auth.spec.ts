@@ -15,8 +15,8 @@ test.describe('Authorization flow', () => {
 
   test('TL-12-1 should login and receive authorization token', async ({ request }) => {
     const user: Login = {
-      username: process.env.DL_USERNAME,
-      password: process.env.DL_PASSWORD,
+      username: process.env.DL_USERNAME!,
+      password: process.env.DL_PASSWORD!,
     }
     const response = await request.post(baseUrl + loginEndpoint, {
       data: user,
